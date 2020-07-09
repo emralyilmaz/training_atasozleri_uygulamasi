@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'atasozler.dart';
 
 void main() => runApp(MaterialApp(
       home: AtasozleriWidget(),
@@ -10,7 +11,12 @@ class AtasozleriWidget extends StatefulWidget {
 }
 
 class _AtasozleriWidgetState extends State<AtasozleriWidget> {
-  List<String> atasozleri = [];
+  List<Atasozler> atasozleri = [
+    Atasozler(soz: "Damlaya damlaya göl olur.", ekleyen: "Emral"),
+    Atasozler(soz: "Acele işe şeytan karışır.", ekleyen: "Mehmet"),
+    Atasozler(soz: "Davulun sesi uzaktan hoş gelir.", ekleyen: "Ali"),
+    Atasozler(soz: "Eğri otur, doğru söyle.", ekleyen: "Esra")
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +25,10 @@ class _AtasozleriWidgetState extends State<AtasozleriWidget> {
         title: Text("Atasözleri Uygulaması"),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(192, 188, 203, 1),
+      ),
+      body: Column(
+        children:
+            atasozleri.map((s) => Text("${s.soz} - ${s.ekleyen}")).toList(),
       ),
     );
   }

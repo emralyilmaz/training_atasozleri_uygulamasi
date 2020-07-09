@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'atasozler.dart';
+import 'atasozuTemplate.dart';
 
 void main() => runApp(MaterialApp(
       home: AtasozleriWidget(),
@@ -24,11 +25,10 @@ class _AtasozleriWidgetState extends State<AtasozleriWidget> {
       appBar: AppBar(
         title: Text("Atasözleri Uygulaması"),
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(192, 188, 203, 1),
+        backgroundColor: Color.fromRGBO(152, 15, 97, 1),
       ),
       body: Column(
-        children:
-            atasozleri.map((s) => Text("${s.soz} - ${s.ekleyen}")).toList(),
+        children: atasozleri.map((s) => atasozuCard(s)).toList(),
       ),
     );
   }

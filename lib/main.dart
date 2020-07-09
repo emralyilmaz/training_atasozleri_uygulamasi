@@ -28,7 +28,13 @@ class _AtasozleriWidgetState extends State<AtasozleriWidget> {
         backgroundColor: Color.fromRGBO(152, 15, 97, 1),
       ),
       body: Column(
-        children: atasozleri.map((s) => atasozuCard(s)).toList(),
+        children: atasozleri
+            .map((s) => atasozuCard(s, () {
+                  setState(() {
+                    atasozleri.remove(s);
+                  });
+                }))
+            .toList(),
       ),
     );
   }

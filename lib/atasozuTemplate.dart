@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'atasozler.dart';
 
-Widget atasozuCard(Atasozler atasozu) {
+Widget atasozuCard(Atasozler atasozu, Function sil) {
   return Card(
     margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
     child: Column(
@@ -18,6 +18,11 @@ Widget atasozuCard(Atasozler atasozu) {
           style: TextStyle(
               fontSize: 12.0, color: Color.fromRGBO(198, 117, 184, 1)),
         ),
+        SizedBox(height: 6.0),
+        FlatButton.icon(
+            onPressed: sil,
+            icon: Icon(Icons.delete, color: Color.fromRGBO(73, 0, 46, 1)),
+            label: Text("sil"))
       ],
     ),
   );
